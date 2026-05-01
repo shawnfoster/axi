@@ -23,8 +23,6 @@ export default function Contact() {
 
       <section className="mx-auto max-w-6xl px-6 pb-24">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
-
-          {/* LEFT PANEL */}
           <aside className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-6 shadow-2xl">
             <p className="text-sm font-bold tracking-[0.25em] text-axi-red">
               AXI INTAKE
@@ -35,44 +33,42 @@ export default function Contact() {
             </h2>
 
             <p className="mt-4 text-sm leading-6 text-white/60">
-              Give AXI enough context to identify what feels broken, where
-              money may be leaking, and what should be fixed first.
+              Give AXI enough context to identify what feels broken, where money
+              may be leaking, and what should be fixed first.
             </p>
 
             <div className="mt-8 grid gap-4">
-              <div className="flex gap-3 rounded-xl border border-white/10 bg-black/30 p-4">
-                <Clock className="mt-1 h-5 w-5 text-axi-red" />
-                <div>
-                  <p className="font-bold">60–90 seconds</p>
-                  <p className="text-sm text-white/50">
-                    Quick enough to complete. Sharp enough to matter.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-3 rounded-xl border border-white/10 bg-black/30 p-4">
-                <ShieldCheck className="mt-1 h-5 w-5 text-axi-red" />
-                <div>
-                  <p className="font-bold">Built for clarity</p>
-                  <p className="text-sm text-white/50">
-                    The questions are designed to expose priority, urgency, and impact.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-3 rounded-xl border border-white/10 bg-black/30 p-4">
-                <CheckCircle2 className="mt-1 h-5 w-5 text-axi-red" />
-                <div>
-                  <p className="font-bold">Outcome-focused</p>
-                  <p className="text-sm text-white/50">
-                    You are not asking for a report. You are asking what to do next.
-                  </p>
-                </div>
-              </div>
+              {[
+                {
+                  icon: Clock,
+                  title: "60–90 seconds",
+                  text: "Quick enough to complete. Sharp enough to matter.",
+                },
+                {
+                  icon: ShieldCheck,
+                  title: "Built for clarity",
+                  text: "The questions expose priority, urgency, and impact.",
+                },
+                {
+                  icon: CheckCircle2,
+                  title: "Outcome-focused",
+                  text: "You are not asking for a report. You are asking what to do next.",
+                },
+              ].map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="flex gap-3 rounded-xl border border-white/10 bg-black/30 p-4">
+                    <Icon className="mt-1 h-5 w-5 text-axi-red" />
+                    <div>
+                      <p className="font-bold">{item.title}</p>
+                      <p className="text-sm text-white/50">{item.text}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </aside>
 
-          {/* FORM */}
           <form
             onSubmit={handleSubmit}
             className="rounded-2xl border border-white/10 bg-[#111111] p-6 shadow-[0_0_60px_rgba(0,0,0,0.45)] md:p-8"
@@ -85,8 +81,6 @@ export default function Contact() {
             </div>
 
             <div className="grid gap-6">
-
-              {/* PROBLEM */}
               <label className="grid gap-2">
                 <span className="text-sm font-bold">
                   What feels broken or unclear right now?
@@ -100,7 +94,6 @@ We're making decisions without confidence in the numbers."`}
                 />
               </label>
 
-              {/* SYSTEMS */}
               <label className="grid gap-2">
                 <span className="text-sm font-bold">
                   What systems are you currently using?
@@ -112,7 +105,6 @@ We're making decisions without confidence in the numbers."`}
                 />
               </label>
 
-              {/* COST */}
               <label className="grid gap-2">
                 <span className="text-sm font-bold">
                   What’s the cost of not fixing this?
@@ -124,10 +116,7 @@ We're making decisions without confidence in the numbers."`}
                 />
               </label>
 
-              {/* ROW */}
               <div className="grid gap-6 md:grid-cols-2">
-
-                {/* TIMELINE */}
                 <label className="grid gap-2">
                   <span className="text-sm font-bold">Timeline</span>
                   <select className={inputClass} required>
@@ -140,7 +129,6 @@ We're making decisions without confidence in the numbers."`}
                   </select>
                 </label>
 
-                {/* BUDGET */}
                 <label className="grid gap-2">
                   <span className="text-sm font-bold">Budget range</span>
                   <select className={inputClass} required>
@@ -153,13 +141,11 @@ We're making decisions without confidence in the numbers."`}
                 </label>
               </div>
 
-              {/* CTA */}
               <button className="group mt-3 flex items-center justify-center gap-2 rounded-xl bg-axi-red px-7 py-4 font-black text-white transition hover:scale-[1.01] hover:opacity-95">
                 Get My Breakdown
                 <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" />
               </button>
 
-              {/* SUCCESS */}
               {sent && (
                 <div className="rounded-xl border border-red-600 bg-red-600/10 p-5">
                   <p className="flex items-center gap-2 text-lg font-black">
@@ -167,14 +153,13 @@ We're making decisions without confidence in the numbers."`}
                     Signal received.
                   </p>
                   <p className="mt-2 text-sm text-white/70">
-                    AXI will review your input and identify what’s broken,
-                    what matters, and what to fix first.
+                    AXI will review your input and identify what’s broken, what matters,
+                    and what to fix first.
                   </p>
                 </div>
               )}
             </div>
           </form>
-
         </div>
       </section>
     </>
