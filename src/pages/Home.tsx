@@ -15,17 +15,42 @@ import { offers } from "../data/offers";
 import { methodSteps } from "../data/method";
 
 const finds = [
-  { title: "Broken workflows", icon: Workflow, text: "Where process drag is slowing execution." },
-  { title: "Revenue leaks", icon: CircleDollarSign, text: "Where money is slipping through the cracks." },
-  { title: "Customer friction", icon: Eye, text: "Where people stall, churn, or disappear." },
-  { title: "Reporting blind spots", icon: BarChart3, text: "Where dashboards show data but not decisions." },
-  { title: "Operational drag", icon: Gauge, text: "Where teams burn time without moving outcomes." },
-  { title: "Missed opportunities", icon: Brain, text: "Where signal exists but action is unclear." },
+  {
+    title: "Broken workflows",
+    icon: Workflow,
+    text: "Where process drag is slowing execution.",
+  },
+  {
+    title: "Revenue leaks",
+    icon: CircleDollarSign,
+    text: "Where money is slipping through the cracks.",
+  },
+  {
+    title: "Customer friction",
+    icon: Eye,
+    text: "Where people stall, churn, or disappear.",
+  },
+  {
+    title: "Reporting blind spots",
+    icon: BarChart3,
+    text: "Where dashboards show data but not decisions.",
+  },
+  {
+    title: "Operational drag",
+    icon: Gauge,
+    text: "Where teams burn time without moving outcomes.",
+  },
+  {
+    title: "Missed opportunities",
+    icon: Brain,
+    text: "Where signal exists but action is unclear.",
+  },
 ];
 
 export default function Home() {
   return (
     <>
+      {/* HERO */}
       <section className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,6,0,0.25),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.07),transparent_30%)]" />
 
@@ -42,7 +67,8 @@ export default function Home() {
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/65">
               AXI helps businesses find what’s broken, where money is leaking,
-              and what to fix first — before wasted effort becomes wasted revenue.
+              and what to fix first — before wasted effort becomes wasted
+              revenue.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-4">
@@ -71,8 +97,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SIGNAL SCAN */}
       <section className="mx-auto max-w-7xl px-6 py-20">
-        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div className="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <p className="text-sm font-bold tracking-[0.25em] text-axi-red">
               SIGNAL SCAN
@@ -82,7 +109,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <p className="max-w-xl text-sm leading-6 text-white/55">
+          <p className="max-w-xl text-sm text-white/55">
             Most businesses don’t lack data. They lack clarity on what actually matters.
           </p>
         </div>
@@ -90,6 +117,7 @@ export default function Home() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {finds.map((item) => {
             const Icon = item.icon;
+
             return (
               <div
                 key={item.title}
@@ -98,24 +126,29 @@ export default function Home() {
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-black/30">
                   <Icon className="h-5 w-5 text-axi-red" />
                 </div>
+
                 <h3 className="text-xl font-black">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/55">{item.text}</p>
+
+                <p className="mt-3 text-sm text-white/55">
+                  {item.text}
+                </p>
               </div>
             );
           })}
         </div>
       </section>
 
+      {/* OFFER LADDER */}
       <section className="border-y border-white/10 bg-[#111111]">
         <div className="mx-auto max-w-7xl px-6 py-20">
-          <div className="mb-10 text-center">
+          <div className="text-center mb-10">
             <p className="text-sm font-bold tracking-[0.25em] text-axi-red">
               OFFER LADDER
             </p>
             <h2 className="mt-3 text-4xl font-black">
               Find it. Fix it. Keep it fixed.
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-white/55">
+            <p className="mt-4 text-sm text-white/55">
               AXI starts with clarity, then builds only what the business actually needs.
             </p>
           </div>
@@ -128,6 +161,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* METHOD */}
       <section className="mx-auto max-w-7xl px-6 py-20">
         <p className="text-sm font-bold tracking-[0.25em] text-axi-red">
           METHOD
@@ -143,9 +177,11 @@ export default function Home() {
               key={step.title}
               className="rounded-2xl border border-white/10 bg-white/[0.04] p-5"
             >
-              <p className="text-sm font-black text-axi-red">0{index + 1}</p>
+              <p className="text-sm font-black text-axi-red">
+                0{index + 1}
+              </p>
               <h3 className="mt-4 text-xl font-black">{step.title}</h3>
-              <p className="mt-3 text-sm leading-6 text-white/55">
+              <p className="mt-3 text-sm text-white/55">
                 {step.description}
               </p>
             </div>
@@ -153,32 +189,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 pb-20">
-        <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.03] p-8 md:p-10">
-          <p className="text-sm font-bold tracking-[0.25em] text-axi-red">
-            BUILT BY AN OPERATOR
-          </p>
-
-          <h2 className="mt-4 max-w-4xl text-3xl font-black leading-tight md:text-5xl">
-            AXI is built for leaders who need decisions, not decoration.
-          </h2>
-
-          <p className="mt-6 max-w-3xl text-base leading-8 text-white/60">
-            AXI was built by Shawn Foster, a business intelligence and customer
-            strategy operator who combines data science, customer success,
-            workflow analysis, and executive storytelling.
-          </p>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {["Business Intelligence", "Customer Strategy", "Decision Systems"].map((item) => (
-              <div key={item} className="rounded-xl border border-white/10 bg-black/30 p-4 font-bold">
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* CTA */}
       <CTA />
     </>
   );
