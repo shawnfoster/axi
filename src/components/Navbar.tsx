@@ -14,7 +14,11 @@ export default function Navbar() {
     <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-black/85 backdrop-blur-xl">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link to="/" className="flex items-center gap-5">
-          <img src={logo} alt="AXI" className="h-14 w-auto object-contain" />
+          <img
+            src={logo}
+            alt="AXI"
+            className="-my-3 h-20 w-auto object-contain"
+          />
 
           <div className="hidden sm:block">
             <p className="text-sm font-black tracking-wide">
