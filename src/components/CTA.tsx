@@ -5,7 +5,7 @@ export default function CTA() {
     <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,6,0,0.12),transparent_42%)]" />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-12 md:py-14">
+      <div className="relative mx-auto max-w-7xl px-6 pb-10 pt-3 md:pb-12 md:pt-4">
         <div className="rounded-2xl border border-red-600/40 bg-axi-gray p-8 text-center shadow-[0_0_40px_rgba(225,6,0,0.08)] transition-all duration-300 hover:shadow-[0_0_70px_rgba(225,6,0,0.15)] md:p-10">
           <h2 className="text-3xl font-black leading-tight md:text-4xl">
             Find What’s <span className="text-axi-red">Costing You Money</span>
