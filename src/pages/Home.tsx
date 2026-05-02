@@ -42,7 +42,7 @@ export default function Home() {
             </Link>
 
             <Link
-              to="/services"
+              to="/contact"
               className="rounded-xl border border-axi-border px-7 py-4 font-semibold text-white/80 transition-all duration-300 hover:border-red-600 hover:bg-white/5 active:scale-[0.98]"
             >
               View Services

@@ -1,55 +1,101 @@
 import { useState } from "react";
-import PageHeader from "../components/PageHeader";
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    const res = await fetch("https://formspree.io/f/mgodvbav", {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (res.ok) {
+      setSent(true);
+      form.reset();
+    } else {
+      alert("Something went wrong. Try again.");
+    }
+
+    setLoading(false);
   }
 
   return (
-    <>
-      <PageHeader
-        eyebrow="DISCOVERY"
-        title="Send the signal."
-        subtitle="Tell AXI what is happening, what feels broken, and what needs to change."
-      />
+    <section className="mx-auto max-w-3xl px-6 py-24">
+      <h1 className="text-4xl font-black">
+        Find What’s <span className="text-axi-red">Wrong</span>
+      </h1>
 
-      <form
-        onSubmit={handleSubmit}
-        className="mx-auto mb-20 grid max-w-3xl gap-5 px-6"
-      >
-        {[
-          "Name",
-          "Email",
-          "Company",
-          "What are you trying to fix?",
-          "What data/tools do you currently use?",
-          "What happens if this does not get fixed?",
-          "Timeline",
-          "Budget range",
-        ].map((label) => (
-          <label key={label} className="grid gap-2">
-            <span className="text-sm font-bold">{label}</span>
-            <textarea
-              className="min-h-12 rounded-md border border-axi-border bg-axi-gray p-3 text-white outline-none focus:border-red-600"
-              required
-            />
-          </label>
-        ))}
+      <p className="mt-4 text-white/75">
+        This takes 60–90 seconds. You’ll get a focused breakdown of what’s broken
+        and what to fix first.
+      </p>
 
-        <button className="rounded-md bg-axi-red px-7 py-3 font-bold">
-          Send the Signal
-        </button>
+      {!sent ? (
+        <form onSubmit={handleSubmit} className="mt-10 space-y-6">
+          <textarea
+            name="problem"
+            required
+            placeholder="What are you trying to fix?"
+            className="w-full rounded-xl border border-axi-border bg-black p-4 text-white"
+          />
 
-        {sent && (
-          <p className="rounded-md border border-red-600 bg-axi-gray p-4 text-center font-bold">
-            Signal received. AXI will review the problem.
-          </p>
-        )}
-      </form>
-    </>
+          <textarea
+            name="tools"
+            placeholder="What data/tools do you currently use?"
+            className="w-full rounded-xl border border-axi-border bg-black p-4 text-white"
+          />
+
+          <textarea 
+            name="impact"
+            placeholder="What happens if this does not get fixed?"
+            className="w-full rounded-xl border border-axi-border bg-black p-4 text-white"
+          />
+
+          <input
+            type="text"
+            name="timeline"
+            placeholder="Timeline"
+            className="w-full rounded-xl border border-axi-border bg-black p-4 text-white"
+          />
+
+          <input
+            type="text"
+            name="budget"
+            placeholder="Budget range"
+            className="w-full rounded-xl border border-axi-border bg-black p-4 text-white"
+          />
+
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Your email"
+            className="w-full rounded-xl border border-axi-border bg-black p-4 text-white"
+          />
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full rounded-xl bg-axi-red py-4 font-black disabled:opacity-50"
+          >
+            {loading ? "Submitting..." : "Submit Diagnostic"}
+          </button>
+        </form>
+      ) : (
+        <div className="mt-10 text-lg font-bold text-axi-red">
+          Submitted. I’ll review and get back to you.
+        </div>
+      )}
+    </section>
   );
 }
