@@ -104,7 +104,7 @@ export default function Home() {
           The <span className="text-axi-red">AXI</span> Offer Ladder
         </h2>
 
-        <div className="grid items-stretch gap-5 lg:grid-cols-[1.08fr_0.92fr_0.92fr]">
+        <div className="grid items-stretch gap-5 lg:grid-cols-3">
           {offers.map((offer, index) => (
             <div
               key={offer.slug}
