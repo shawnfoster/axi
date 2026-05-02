@@ -30,7 +30,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="mx-auto max-w-3xl px-6 py-24">
+    <section className="mx-auto max-w-3xl px-6 pb-20 pt-12 md:pt-14">
       <h1 className="text-4xl font-black">
         Get Your <span className="text-axi-red">Business Breakdown</span>
       </h1>
