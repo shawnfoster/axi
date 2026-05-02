@@ -36,14 +36,14 @@ export default function Home() {
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               to="/services/find-whats-wrong"
-              className="rounded-xl bg-axi-red px-7 py-4 font-black shadow-[0_10px_30px_rgba(225,6,0,0.25)] transition hover:scale-[1.02] hover:opacity-95"
+              className="rounded-xl bg-axi-red px-7 py-4 font-black shadow-[0_10px_30px_rgba(225,6,0,0.25)] transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_20px_60px_rgba(225,6,0,0.35)] active:scale-[0.98]"
             >
               Find What’s Wrong
             </Link>
 
             <Link
               to="/services"
-              className="rounded-xl border border-axi-border px-7 py-4 font-semibold text-white/80 transition hover:border-red-600"
+              className="rounded-xl border border-axi-border px-7 py-4 font-semibold text-white/80 transition-all duration-300 hover:border-red-600 hover:bg-white/5"
             >
               View Services
             </Link>
@@ -67,7 +67,7 @@ export default function Home() {
             {finds.map((item) => (
               <div
                 key={item}
-                className="rounded-xl border border-axi-border bg-black p-6 text-center font-semibold text-white/80"
+                className="rounded-xl border border-axi-border bg-black p-6 text-center font-semibold text-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-red-600 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
               >
                 {item}
               </div>
