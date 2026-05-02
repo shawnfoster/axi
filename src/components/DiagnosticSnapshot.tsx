@@ -1,39 +1,28 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-
 export default function DiagnosticSnapshot() {
-  const items = [
-    { label: "Signal Noise", value: "High" },
-    { label: "Revenue Leak Risk", value: "Active" },
-    { label: "Priority Needed", value: "Immediate" },
-    { label: "Recommended Action", value: "Find What’s Wrong" },
-  ];
-
   return (
-    <div className="rounded-2xl border border-white/10 bg-[#111111] p-6 shadow-[0_0_60px_rgba(0,0,0,0.45)]">
-      <p className="text-sm font-bold tracking-[0.25em] text-axi-red">
-        AXI DIAGNOSTIC SNAPSHOT
+    <div className="rounded-xl border border-red-600 bg-axi-gray p-8 shadow-[0_0_30px_rgba(225,6,0,0.25)]">
+      <p className="mb-8 text-sm font-bold tracking-[0.25em]">
+        <span className="text-axi-red">AXI</span> DIAGNOSTIC SNAPSHOT
       </p>
 
-      <div className="mt-6 grid gap-4">
-        {items.map((item) => (
-          <div
-            key={item.label}
-            className="flex justify-between rounded-xl border border-white/10 bg-black/30 p-4"
-          >
-            <span className="text-sm text-white/60">{item.label}</span>
-            <span className="font-bold text-white">{item.value}</span>
-          </div>
-        ))}
-      </div>
+      {[
+        ["Signal Noise", "High"],
+        ["Revenue Leak Risk", "Active"],
+        ["Priority Needed", "Immediate"],
+      ].map(([label, value]) => (
+        <div
+          key={label}
+          className="flex justify-between border-b border-white/10 py-4"
+        >
+          <span className="text-white/70">{label}</span>
+          <span className="font-bold text-axi-red">{value}</span>
+        </div>
+      ))}
 
-      <Link
-        to="/services/find-whats-wrong"
-        className="group mt-6 flex items-center justify-center gap-2 rounded-xl bg-axi-red px-6 py-3 font-black text-white transition hover:scale-[1.02]"
-      >
-        Find What’s Wrong
-        <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-      </Link>
+      <div className="mt-8 flex justify-between">
+        <span className="font-bold">Recommended Action</span>
+        <span className="font-bold text-axi-red">Find What’s Wrong</span>
+      </div>
     </div>
   );
 }

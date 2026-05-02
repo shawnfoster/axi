@@ -1,51 +1,41 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function OfferCard({ offer, featured = false }: any) {
   return (
     <div
-      className={`rounded-2xl border p-6 transition ${
-        featured
-          ? "border-red-600 bg-[#111111] shadow-[0_0_40px_rgba(225,6,0,0.15)]"
-          : "border-white/10 bg-white/[0.04]"
+      className={`rounded-xl border bg-axi-gray p-6 ${
+        featured ? "border-red-600" : "border-axi-border"
       }`}
     >
-      <p className="text-sm font-bold text-axi-red">
-        {offer.internalName}
-      </p>
+      {featured && (
+        <p className="mb-3 inline-block rounded bg-axi-red px-3 py-1 text-xs font-bold">
+          START HERE
+        </p>
+      )}
 
-      <h3 className="mt-3 text-2xl font-black">
-        {offer.title}
-      </h3>
-
-      <p className="mt-4 text-sm text-white/60">
-        {offer.description}
-      </p>
+      <h3 className="text-2xl font-bold">{offer.title}</h3>
+      <p className="mt-1 text-sm text-axi-red">{offer.internalName}</p>
 
       <div className="mt-6">
-        <p className="text-xs text-white/40">
+        <span className="text-4xl font-bold">{offer.price}</span>
+        <span className="ml-2 text-xs uppercase text-white/50">
           {offer.priceNote}
-        </p>
-        <p className="text-4xl font-black text-axi-red">
-          {offer.price}
-        </p>
+        </span>
       </div>
 
-      <ul className="mt-6 space-y-3">
-        {offer.deliverables.map((item: string) => (
-          <li key={item} className="flex items-start gap-2 text-sm">
-            <CheckCircle2 className="mt-1 h-4 w-4 text-axi-red" />
-            <span>{item}</span>
-          </li>
+      <p className="mt-5 text-sm text-white/65">{offer.description}</p>
+
+      <ul className="mt-6 space-y-2 text-sm text-white/80">
+        {offer.deliverables.slice(0, 5).map((item: string) => (
+          <li key={item}>✓ {item}</li>
         ))}
       </ul>
 
       <Link
         to={`/services/${offer.slug}`}
-        className="group mt-6 flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-black/30 px-5 py-3 font-bold transition hover:border-red-600"
+        className="mt-6 inline-block rounded-md bg-axi-red px-5 py-2 text-sm font-bold"
       >
         View Offer
-        <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
       </Link>
     </div>
   );

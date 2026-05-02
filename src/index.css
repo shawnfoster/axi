@@ -38,3 +38,30 @@ body {
 .border-axi-border {
   border-color: var(--axi-border);
 }
+
+/* TYPE SCALE */
+
+h1 {
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  letter-spacing: -0.01em;
+}
+
+p {
+  line-height: 1.7;
+}
+
+/* CONSISTENT SECTION SPACING */
+.section {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
