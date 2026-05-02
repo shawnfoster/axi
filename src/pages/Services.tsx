@@ -8,11 +8,11 @@ export default function Services() {
     <>
       <PageHeader
         eyebrow="SERVICES"
-        title="Start with clarity. Then build the system."
+        title="Start with clarity. Build with intention."
         subtitle="AXI services are structured around one simple ladder: find the problem, fix the problem, then keep the business aligned."
       />
 
-      <section className="mx-auto grid max-w-7xl gap-6 px-6 py-8 md:grid-cols-3">
+      <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 pt-4 md:grid-cols-3">
         {offers.map((offer, index) => (
           <OfferCard key={offer.slug} offer={offer} featured={index === 0} />
         ))}

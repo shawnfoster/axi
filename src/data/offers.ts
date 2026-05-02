@@ -7,14 +7,13 @@ export const offers = [
     priceNote: "Launch price",
     turnaround: "48–72 hours",
     description:
-      "A focused breakdown of your business to identify what’s costing you money and what to fix first.",
+      "A 48-hour business breakdown that identifies what’s broken, where money is leaking, and what to fix first.",
     deliverables: [
+      "48-hour turnaround",
       "What’s Broken",
       "Where Money Is Leaking",
       "Priority Stack",
       "Exact Next Steps",
-      "Optional Loom Walkthrough",
-      "Short PDF Summary",
     ],
   },
   {

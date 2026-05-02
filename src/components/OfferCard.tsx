@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 export default function OfferCard({ offer, featured = false }: any) {
   return (
     <div
-      className={`rounded-xl border bg-axi-gray p-6 ${
+      className={`card rounded-xl border bg-axi-gray p-6 transition-all duration-300 ${
         featured
           ? "border-red-600 shadow-[0_0_35px_rgba(225,6,0,0.12)]"
           : "border-axi-border"
-      }`}
+      } hover:-translate-y-1 hover:shadow-[0_25px_70px_rgba(0,0,0,0.6)]`}
     >
       {featured && (
         <p className="mb-3 inline-block rounded bg-axi-red px-3 py-1 text-xs font-black tracking-wide">
