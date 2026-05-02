@@ -25,7 +25,7 @@ const finds = [
   { title: "Missed opportunities", Icon: BarChart3 },
 ];
 
-const methodIcons = [Database, Search, Workflow, Settings, Rocket];
+const methodIcons = [Database, Search, Settings, Workflow, Rocket];
 
 export default function Home() {
   return (
@@ -104,11 +104,11 @@ export default function Home() {
           The <span className="text-axi-red">AXI</span> Offer Ladder
         </h2>
 
-        <div className="grid gap-5 lg:grid-cols-[1.08fr_0.92fr_0.92fr]">
+        <div className="grid items-stretch gap-5 lg:grid-cols-[1.08fr_0.92fr_0.92fr]">
           {offers.map((offer, index) => (
             <div
               key={offer.slug}
-              className={`card relative rounded-xl border bg-axi-gray/80 p-6 ${
+              className={`card relative flex h-full flex-col rounded-xl border bg-axi-gray/80 p-6 ${
                 index === 0
                   ? "border-red-600 shadow-[0_0_30px_rgba(225,6,0,0.16)]"
                   : "border-axi-border"
@@ -120,7 +120,7 @@ export default function Home() {
                 </p>
               )}
 
-              <div className="grid gap-5 md:grid-cols-[1fr_auto] lg:grid-cols-1 xl:grid-cols-[1fr_auto]">
+              <div className="grid flex-1 gap-5 md:grid-cols-[1fr_auto] lg:grid-cols-1 xl:grid-cols-[1fr_auto]">
                 <div>
                   <h3 className="text-2xl font-black">
                     {index + 1}. {offer.title}
@@ -144,7 +144,7 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div className="mt-5 border-t border-white/10 pt-4">
+              <div className="mt-auto border-t border-white/10 pt-4">
                 <p className="text-xs font-bold uppercase tracking-wide text-white/45">
                   Starting at
                 </p>
