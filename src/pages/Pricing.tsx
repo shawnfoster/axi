@@ -12,7 +12,7 @@ export default function Pricing() {
         subtitle="Start with Find What’s Wrong, then build only what the business actually needs."
       />
 
-      <section className="mx-auto grid max-w-7xl gap-5 px-6 pb-14 pt-4 md:grid-cols-3">
+      <section className="mx-auto grid max-w-7xl gap-5 px-6 pb-6 pt-4 md:grid-cols-3">
         {offers.map((offer, index) => (
           <div
             key={offer.slug}
