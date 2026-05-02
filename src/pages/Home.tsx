@@ -1,77 +1,75 @@
 import { Link } from "react-router-dom";
+import {
+  BarChart3,
+  CircleDollarSign,
+  Database,
+  EyeOff,
+  Rocket,
+  Search,
+  Settings,
+  UserRound,
+  Workflow,
+  Wrench,
+} from "lucide-react";
 import DiagnosticSnapshot from "../components/DiagnosticSnapshot";
-import OfferCard from "../components/OfferCard";
 import CTA from "../components/CTA";
 import { offers } from "../data/offers";
 import { methodSteps } from "../data/method";
 
 const finds = [
-  {
-    title: "Broken workflows",
-    text: "Find the process friction slowing decisions, delivery, or revenue.",
-  },
-  {
-    title: "Revenue leaks",
-    text: "Spot where money is slipping through gaps in data, operations, or follow-up.",
-  },
-  {
-    title: "Customer friction",
-    text: "Identify where people stall, churn, disappear, or fail to convert.",
-  },
-  {
-    title: "Reporting blind spots",
-    text: "Expose what your dashboards are not clearly telling you.",
-  },
-  {
-    title: "Operational drag",
-    text: "Separate busy work from the work that actually moves outcomes.",
-  },
-  {
-    title: "Missed opportunities",
-    text: "Turn buried signals into clear next moves before they fade.",
-  },
+  { title: "Broken workflows", Icon: Wrench },
+  { title: "Revenue leaks", Icon: CircleDollarSign },
+  { title: "Customer friction", Icon: UserRound },
+  { title: "Reporting blind spots", Icon: EyeOff },
+  { title: "Operational drag", Icon: Settings },
+  { title: "Missed opportunities", Icon: BarChart3 },
 ];
+
+const methodIcons = [Database, Search, Workflow, Settings, Rocket];
 
 export default function Home() {
   return (
     <>
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(225,6,0,0.14),transparent_34%)]" />
+      <section className="relative overflow-hidden border-b border-axi-border">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_82%_24%,rgba(225,6,0,0.18),transparent_28%)]" />
+        <div className="pointer-events-none absolute -right-10 top-0 hidden h-full w-[32%] skew-x-[-18deg] bg-gradient-to-b from-white/[0.08] via-red-600/20 to-red-700/55 opacity-80 lg:block" />
+        <div className="pointer-events-none absolute right-[8%] top-0 hidden h-full w-[9%] skew-x-[-18deg] bg-red-700/80 blur-[1px] lg:block" />
 
-        <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 py-16 md:grid-cols-2 md:py-20">
-          <div className="space-y-6">
-            <p className="text-sm font-semibold tracking-[0.3em] text-axi-red">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-6 py-12 md:grid-cols-[1fr_0.92fr] md:py-16 lg:py-20">
+          <div>
+            <p className="text-sm font-black tracking-[0.32em] text-axi-red">
               ALGORITHMS BY IDEA
             </p>
 
-            <h1 className="text-5xl font-black leading-[1.02] md:text-6xl">
+            <h1 className="mt-4 max-w-3xl text-5xl font-black leading-[1.03] md:text-6xl lg:text-7xl">
               I turn messy business signals into{" "}
               <span className="text-axi-red">revenue decisions.</span>
             </h1>
 
-            <p className="max-w-xl text-lg text-white/75">
-              If your reports, workflows, or customer data are creating more questions than answers,
-              AXI finds what’s leaking revenue, what’s unclear, and what to fix first.
+            <p className="mt-5 max-w-2xl text-lg text-white/78">
+              AXI helps businesses find what’s broken, where money is leaking,
+              and what to fix first — before wasted effort becomes wasted revenue.
             </p>
 
-            <div className="flex flex-wrap gap-4 pt-2">
+            <div className="mt-7 flex flex-wrap gap-4">
               <Link
                 to="/contact"
-                className="rounded-xl bg-axi-red px-7 py-4 font-black shadow-[0_10px_30px_rgba(225,6,0,0.25)] transition-all duration-300 ease-out hover:delay-75 hover:scale-[1.04] hover:shadow-[0_20px_60px_rgba(225,6,0,0.35)] active:scale-[0.98]"
+                className="rounded-xl bg-axi-red px-8 py-4 font-black text-white shadow-[0_14px_40px_rgba(225,6,0,0.28)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_22px_65px_rgba(225,6,0,0.36)] active:scale-[0.98]"
               >
-                Get My Breakdown
+                Find What’s Wrong
               </Link>
 
               <Link
                 to="/services"
-                className="rounded-xl border border-axi-border px-7 py-4 font-semibold text-white/80 transition-all duration-300 hover:border-red-600 hover:bg-white/5 active:scale-[0.98]"
+                className="rounded-xl border border-white/35 bg-black/30 px-8 py-4 font-black text-white/90 backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-red-600 hover:bg-white/5 active:scale-[0.98]"
               >
-                How It Works
+                View Services
               </Link>
             </div>
 
-            <p className="border-l-4 border-axi-red pl-5 text-sm font-semibold text-white/75">
-              48-hour breakdown. No bloated report. Just what’s broken, what it’s costing you, and what to fix first.
+            <p className="mt-6 flex items-center gap-4 text-sm font-black text-white/85">
+              <span className="h-[3px] w-8 rounded-full bg-axi-red" />
+              You don’t need another report. You need to know what to do next.
             </p>
           </div>
 
@@ -79,26 +77,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-axi-border bg-axi-gray/40">
-        <div className="section mx-auto max-w-7xl px-6">
-          <div className="mb-10 max-w-3xl">
-            <p className="text-sm font-semibold tracking-[0.3em] text-axi-red">
-              SIGNAL SCAN
-            </p>
-            <h2 className="mt-3 text-3xl font-black uppercase">
-              What <span className="text-axi-red">AXI</span> Finds
-            </h2>
-          </div>
+      <section className="border-b border-axi-border bg-black/70 py-6">
+        <div className="mx-auto max-w-7xl px-6">
+          <h2 className="mb-3 text-xl font-black uppercase tracking-wide">
+            What <span className="text-axi-red">AXI</span> Finds
+          </h2>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {finds.map((item) => (
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
+            {finds.map(({ title, Icon }) => (
               <div
-                key={item.title}
-                className="card rounded-2xl border border-axi-border bg-black p-8 text-left hover:border-red-600 hover:bg-[#111] hover:shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
+                key={title}
+                className="card flex min-h-24 flex-col items-center justify-center rounded-xl border border-axi-border bg-white/[0.025] p-4 text-center hover:border-red-600 hover:bg-white/[0.045]"
               >
-                <p className="text-lg font-black text-white">{item.title}</p>
-                <p className="mt-3 text-sm leading-6 text-white/60">
-                  {item.text}
+                <Icon className="mb-3 h-8 w-8 text-axi-red" strokeWidth={1.7} />
+                <p className="max-w-28 text-sm font-black leading-tight text-white">
+                  {title}
                 </p>
               </div>
             ))}
@@ -106,35 +99,91 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section mx-auto max-w-7xl px-6">
-        <h2 className="mb-12 text-center text-3xl font-black uppercase">
+      <section className="mx-auto max-w-7xl px-6 py-8">
+        <h2 className="mb-4 text-center text-2xl font-black uppercase tracking-wide">
           The <span className="text-axi-red">AXI</span> Offer Ladder
         </h2>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-5 lg:grid-cols-[1.08fr_0.92fr_0.92fr]">
           {offers.map((offer, index) => (
-            <OfferCard key={offer.slug} offer={offer} featured={index === 0} />
+            <div
+              key={offer.slug}
+              className={`card relative rounded-xl border bg-axi-gray/80 p-6 ${
+                index === 0
+                  ? "border-red-600 shadow-[0_0_30px_rgba(225,6,0,0.16)]"
+                  : "border-axi-border"
+              }`}
+            >
+              {index === 0 && (
+                <p className="absolute -top-3 left-6 rounded bg-axi-red px-4 py-1 text-xs font-black tracking-wide text-white">
+                  START HERE
+                </p>
+              )}
+
+              <div className="grid gap-5 md:grid-cols-[1fr_auto] lg:grid-cols-1 xl:grid-cols-[1fr_auto]">
+                <div>
+                  <h3 className="text-2xl font-black">
+                    {index + 1}. {offer.title}
+                  </h3>
+                  <p className="mt-2 text-sm font-black text-axi-red">
+                    {offer.internalName}
+                  </p>
+
+                  <p className="mt-4 text-sm leading-6 text-white/70">
+                    {offer.description}
+                  </p>
+                </div>
+
+                <ul className="space-y-2 text-sm text-white/80">
+                  {offer.deliverables.slice(0, 5).map((item: string) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-0.5 text-axi-red">✓</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-5 border-t border-white/10 pt-4">
+                <p className="text-xs font-bold uppercase tracking-wide text-white/45">
+                  Starting at
+                </p>
+                <div className="mt-1 flex items-end gap-3">
+                  <span className="text-4xl font-black">{offer.price}</span>
+                  <span className="pb-1 text-xs text-white/45">{offer.priceNote}</span>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="section bg-white px-6 text-black">
-        <h2 className="mb-12 text-center text-3xl font-black uppercase">
+      <section className="bg-white px-6 py-7 text-black">
+        <h2 className="mb-6 text-center text-2xl font-black uppercase tracking-wide">
           The <span className="text-axi-red">AXI</span> Method
         </h2>
 
-        <div className="mx-auto grid max-w-7xl gap-8 md:grid-cols-3 lg:grid-cols-5">
-          {methodSteps.map((step, index) => (
-            <div key={step.title}>
-              <p className="text-sm font-semibold text-axi-red">
-                0{index + 1}
-              </p>
-              <h3 className="mt-3 text-xl font-black">{step.title}</h3>
-              <p className="mt-3 text-sm text-black/65">
-                {step.description}
-              </p>
-            </div>
-          ))}
+        <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-5">
+          {methodSteps.map((step, index) => {
+            const Icon = methodIcons[index] ?? Database;
+
+            return (
+              <div key={step.title} className="relative flex gap-4 md:block">
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-black/20 bg-white shadow-sm md:mx-auto md:h-16 md:w-16">
+                  <Icon className="h-7 w-7" strokeWidth={1.8} />
+                </div>
+
+                <div className="md:mt-3 md:text-center">
+                  <h3 className="text-base font-black">
+                    {index + 1}. {step.title}
+                  </h3>
+                  <p className="mt-1 text-xs leading-5 text-black/68">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 
