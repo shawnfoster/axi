@@ -14,7 +14,7 @@ export default function Method() {
         subtitle="The method is built to turn scattered business signals into clear action."
       />
 
-      <section className="mx-auto max-w-7xl px-6 pb-16 pt-4">
+      <section className="mx-auto max-w-7xl px-6 pb-6 pt-4">
         <div className="rounded-3xl border border-axi-border bg-axi-gray/70 p-4 shadow-[0_25px_80px_rgba(0,0,0,0.35)] md:p-5">
           <div className="grid gap-4 lg:grid-cols-5">
             {methodSteps.map((step, index) => {
