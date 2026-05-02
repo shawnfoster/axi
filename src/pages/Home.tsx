@@ -120,21 +120,15 @@ export default function Home() {
                 </p>
               )}
 
-              <div className="grid flex-1 gap-5 md:grid-cols-[1fr_auto] lg:grid-cols-1 xl:grid-cols-[1fr_auto]">
-                <div>
-                  <h3 className="text-2xl font-black">
-                    {index + 1}. {offer.title}
-                  </h3>
-                  <p className="mt-2 text-sm font-black text-axi-red">
-                    {offer.internalName}
-                  </p>
+              <div className="flex flex-1 flex-col">
+                <h3 className="text-2xl font-black">
+                  {index + 1}. {offer.title}
+                </h3>
+                <p className="mt-2 text-sm font-black text-axi-red">
+                  {offer.internalName}
+                </p>
 
-                  <p className="mt-4 text-sm leading-6 text-white/70">
-                    {offer.description}
-                  </p>
-                </div>
-
-                <ul className="space-y-2 text-sm text-white/80">
+                <ul className="mt-5 space-y-2 text-sm text-white/80">
                   {offer.deliverables.slice(0, 5).map((item: string) => (
                     <li key={item} className="flex items-start gap-2">
                       <span className="mt-0.5 text-axi-red">✓</span>
@@ -142,6 +136,10 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+
+                <p className="mt-5 text-sm leading-6 text-white/70">
+                  {offer.description}
+                </p>
               </div>
 
               <div className="mt-auto border-t border-white/10 pt-4">
