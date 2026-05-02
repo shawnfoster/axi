@@ -14,8 +14,8 @@ export default function Method() {
         subtitle="The method is built to turn scattered business signals into clear action."
       />
 
-      <section className="mx-auto max-w-7xl px-6 pb-20 pt-4">
-        <div className="rounded-3xl border border-axi-border bg-axi-gray/70 p-5 shadow-[0_25px_80px_rgba(0,0,0,0.35)] md:p-7">
+      <section className="mx-auto max-w-7xl px-6 pb-16 pt-4">
+        <div className="rounded-3xl border border-axi-border bg-axi-gray/70 p-4 shadow-[0_25px_80px_rgba(0,0,0,0.35)] md:p-5">
           <div className="grid gap-4 lg:grid-cols-5">
             {methodSteps.map((step, index) => {
               const Icon = methodIcons[index] ?? Database;
@@ -23,10 +23,10 @@ export default function Method() {
 
               return (
                 <div key={step.title} className="relative">
-                  <div className="card h-full rounded-2xl border border-axi-border bg-black p-6 hover:border-red-600 hover:bg-white/[0.035]">
+                  <div className="card h-full rounded-2xl border border-axi-border bg-black p-5 hover:border-red-600 hover:bg-white/[0.035]">
                     <div className="flex items-start justify-between gap-4">
-                      <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white">
-                        <Icon className="h-7 w-7" strokeWidth={1.8} />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white/[0.03] text-white">
+                        <Icon className="h-6 w-6" strokeWidth={1.8} />
                       </div>
 
                       <p className="text-sm font-black text-axi-red">
@@ -34,8 +34,8 @@ export default function Method() {
                       </p>
                     </div>
 
-                    <h2 className="mt-8 text-2xl font-black">{step.title}</h2>
-                    <p className="mt-4 text-sm leading-6 text-white/65">
+                    <h2 className="mt-6 text-[1.65rem] font-black leading-tight">{step.title}</h2>
+                    <p className="mt-3 text-sm leading-6 text-white/65">
                       {step.description}
                     </p>
                   </div>
@@ -51,30 +51,30 @@ export default function Method() {
           </div>
         </div>
 
-        <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-axi-border bg-black p-6">
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-axi-red">
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
+          <div className="rounded-2xl border border-axi-border bg-black p-5">
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-axi-red">
               Input
             </p>
-            <p className="mt-3 text-white/70">
+            <p className="mt-2 text-sm leading-6 text-white/70">
               Data, screenshots, workflows, tools, customer signals, and context.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-axi-border bg-black p-6">
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-axi-red">
+          <div className="rounded-2xl border border-axi-border bg-black p-5">
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-axi-red">
               Decision Layer
             </p>
-            <p className="mt-3 text-white/70">
+            <p className="mt-2 text-sm leading-6 text-white/70">
               What is broken, what it costs, what matters, and what gets fixed first.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-axi-border bg-black p-6">
-            <p className="text-sm font-black uppercase tracking-[0.25em] text-axi-red">
+          <div className="rounded-2xl border border-axi-border bg-black p-5">
+            <p className="text-xs font-black uppercase tracking-[0.25em] text-axi-red">
               Output
             </p>
-            <p className="mt-3 text-white/70">
+            <p className="mt-2 text-sm leading-6 text-white/70">
               A cleaner operating system for action, reporting, and execution.
             </p>
           </div>
