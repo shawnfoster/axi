@@ -24,6 +24,15 @@ const comparison = [
   },
 ];
 
+const servicePricing = [
+  ["Clean Data & Reporting", "$350–$1,250", "Spreadsheet cleanup, export repair, reconciliation, dashboard-ready datasets, and reporting structure."],
+  ["Dashboard & Decision Systems", "$750–$2,500+", "KPI dashboards, executive scorecards, operating trackers, and command-center views."],
+  ["Workflow & Process Improvement", "$500–$1,750", "Workflow mapping, bottleneck review, SOP support, handoff clarity, and process redesign."],
+  ["Customer & Revenue Intelligence", "$750–$2,000+", "Customer behavior review, retention signals, sales pattern analysis, and opportunity discovery."],
+  ["Strategic BI / Advisory Sprint", "$900–$3,000+", "Executive readout, decision memo, business recommendations, and prioritized action plan."],
+  ["Ongoing Decision Support", "$1,000–$4,000/mo", "Monthly reporting, dashboard iteration, advisory support, decision reviews, and operating rhythm support."],
+];
+
 export default function Pricing() {
   return (
     <>
@@ -127,6 +136,33 @@ export default function Pricing() {
                     <span className="text-white/72">{item.timing}</span>
                   </p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pb-6">
+        <div className="rounded-2xl border border-axi-border bg-axi-gray/60 p-5 md:p-6">
+          <p className="text-xs font-black uppercase tracking-[0.25em] text-axi-red">
+            Additional Service Pricing
+          </p>
+          <h2 className="mt-2 text-2xl font-black">
+            Pricing for the expanded service menu.
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm leading-6 text-white/65">
+            Final scope depends on data condition, number of systems, urgency, and whether the work is advisory, cleanup, buildout, or ongoing support.
+          </p>
+
+          <div className="mt-5 overflow-hidden rounded-xl border border-axi-border">
+            {servicePricing.map(([service, price, includes]) => (
+              <div
+                key={service}
+                className="grid gap-3 border-t border-axi-border bg-black/55 px-5 py-4 first:border-t-0 md:grid-cols-[1fr_0.55fr_1.3fr] md:items-start"
+              >
+                <p className="font-black text-white">{service}</p>
+                <p className="font-black text-axi-red">{price}</p>
+                <p className="text-sm leading-6 text-white/68">{includes}</p>
               </div>
             ))}
           </div>
