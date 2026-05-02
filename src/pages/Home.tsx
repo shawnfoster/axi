@@ -17,18 +17,18 @@ const finds = [
 export default function Home() {
   return (
     <>
-      <section className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-28 md:grid-cols-2 md:py-36">
+      <section className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-20 md:grid-cols-2 md:py-28">
         <div>
           <p className="mb-5 text-sm font-semibold tracking-[0.3em] text-axi-red">
             ALGORITHMS BY IDEA
           </p>
 
-          <h1 className="text-5xl font-black leading-[0.92] md:text-7xl">
+          <h1 className="text-5xl font-black leading-[0.95] md:text-6xl">
             I turn messy business signals into{" "}
             <span className="text-axi-red">revenue decisions.</span>
           </h1>
 
-          <p className="mt-8 max-w-xl text-lg text-white/70">
+          <p className="mt-8 max-w-xl text-lg text-white/75">
             AXI helps businesses find what’s broken, where money is leaking,
             and what to fix first — before wasted effort becomes wasted revenue.
           </p>
@@ -43,13 +43,13 @@ export default function Home() {
 
             <Link
               to="/services"
-              className="rounded-xl border border-axi-border px-7 py-4 font-semibold text-white/80 transition-all duration-300 hover:border-red-600 hover:bg-white/5"
+              className="rounded-xl border border-axi-border px-7 py-4 font-semibold text-white/80 transition-all duration-300 hover:border-red-600 hover:bg-white/5 active:scale-[0.98]"
             >
               View Services
             </Link>
           </div>
 
-          <p className="mt-8 border-l-4 border-axi-red pl-5 text-sm font-semibold text-white/80">
+          <p className="mt-8 border-l-4 border-axi-red pl-5 text-sm font-semibold text-white/75">
             You don’t need another report. You need to know what to do next.
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function Home() {
             {finds.map((item) => (
               <div
                 key={item}
-                className="rounded-xl border border-axi-border bg-black p-6 text-center font-semibold text-white/80 transition-all duration-300 hover:-translate-y-1 hover:border-red-600 hover:shadow-[0_10px_30px_rgba(0,0,0,0.6)]"
+                className="rounded-xl border border-axi-border bg-black p-6 text-center font-semibold text-white/75 transition-all duration-300 hover:-translate-y-2 hover:border-red-600 hover:bg-[#111] hover:shadow-[0_20px_60px_rgba(0,0,0,0.8)]"
               >
                 {item}
               </div>
@@ -100,7 +100,9 @@ export default function Home() {
                 0{index + 1}
               </p>
               <h3 className="mt-3 text-xl font-black">{step.title}</h3>
-              <p className="mt-3 text-sm text-black/65">{step.description}</p>
+              <p className="mt-3 text-sm text-black/65">
+                {step.description}
+              </p>
             </div>
           ))}
         </div>

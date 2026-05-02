@@ -28,11 +28,11 @@ export default function OfferCard({ offer, featured = false }: any) {
         </span>
       </div>
 
-      <p className="mt-5 text-sm leading-6 text-white/65">
+      <p className="mt-5 text-sm leading-6 text-white/75">
         {offer.description}
       </p>
 
-      <ul className="mt-6 space-y-2 text-sm text-white/80">
+      <ul className="mt-6 space-y-2 text-sm text-white/75">
         {offer.deliverables.slice(0, 5).map((item: string) => (
           <li key={item} className="flex gap-2">
             <span className="text-axi-red">✓</span>
@@ -43,7 +43,7 @@ export default function OfferCard({ offer, featured = false }: any) {
 
       <Link
         to={`/services/${offer.slug}`}
-        className="mt-6 inline-block rounded-xl border border-white/10 bg-black/30 px-5 py-3 text-sm font-black"
+        className="mt-6 inline-block rounded-xl border border-white/10 bg-black/30 px-5 py-3 text-sm font-black text-white/80 hover:border-red-600 hover:bg-white/5"
       >
         View Offer
       </Link>

@@ -16,7 +16,17 @@ body {
   margin: 0;
   background: var(--axi-black);
   color: var(--axi-white);
-  font-family: Inter, system-ui, sans-serif;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: var(--axi-red);
+  color: var(--axi-white);
 }
 
 .text-axi-red {
@@ -39,8 +49,6 @@ body {
   border-color: var(--axi-border);
 }
 
-/* TYPE SCALE */
-
 h1 {
   letter-spacing: -0.02em;
 }
@@ -53,15 +61,25 @@ p {
   line-height: 1.7;
 }
 
-/* CONSISTENT SECTION SPACING */
 .section {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 @media (min-width: 768px) {
   .section {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  transition-property: color, background-color, border-color, transform,
+    box-shadow, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
 }
