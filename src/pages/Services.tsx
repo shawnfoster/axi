@@ -6,36 +6,48 @@ const serviceAreas = [
   {
     title: "Business Diagnostic",
     label: "Find what is broken",
+    price: "$497",
+    priceNote: "launch diagnostic",
     text: "A focused review of workflows, reporting, customer friction, and revenue leakage so the business knows what to fix first.",
     points: ["Revenue leak review", "Workflow friction scan", "Priority stack", "Next-step roadmap"],
   },
   {
     title: "Clean Data & Reporting",
     label: "Make the numbers usable",
+    price: "$350–$1,250",
+    priceNote: "starting range",
     text: "Clean, structure, reconcile, and organize messy spreadsheets, exports, dashboards, or operating reports so decisions are based on reality instead of noise.",
     points: ["Spreadsheet cleanup", "Data structure repair", "Report reconciliation", "Dashboard-ready datasets"],
   },
   {
     title: "Dashboard & Decision Systems",
     label: "Turn signals into action",
+    price: "$750–$2,500+",
+    priceNote: "starting range",
     text: "Build dashboards, trackers, scorecards, and decision tools that show what matters, what changed, and what action should happen next.",
     points: ["KPI dashboards", "Executive scorecards", "Decision trackers", "Operational command views"],
   },
   {
     title: "Workflow & Process Improvement",
     label: "Remove operational drag",
+    price: "$500–$1,750",
+    priceNote: "starting range",
     text: "Map how work actually moves, identify bottlenecks, and redesign processes so teams stop losing time in manual handoffs and unclear ownership.",
     points: ["Workflow mapping", "Process redesign", "Handoff clarity", "SOP support"],
   },
   {
     title: "Customer & Revenue Intelligence",
     label: "Understand behavior",
+    price: "$750–$2,000+",
+    priceNote: "starting range",
     text: "Analyze customer activity, retention signals, sales patterns, and friction points to uncover what drives growth, churn, loyalty, and missed opportunity.",
     points: ["Customer behavior analysis", "Retention signals", "Sales pattern review", "Opportunity discovery"],
   },
   {
     title: "Ongoing Decision Support",
     label: "Stay aligned after the fix",
+    price: "$1,000–$4,000/mo",
+    priceNote: "retainer range",
     text: "Monthly reporting, dashboard iteration, advisory support, and decision reviews so the business keeps improving instead of drifting back into confusion.",
     points: ["Monthly reporting", "Dashboard iteration", "Decision reviews", "Advisory support"],
   },
@@ -77,6 +89,22 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
+
+              <div className="mt-auto pt-5">
+                <div className="rounded-xl border border-white/10 bg-black/35 p-4">
+                  <p className="text-xs font-black uppercase tracking-[0.2em] text-white/45">
+                    Starting at
+                  </p>
+                  <div className="mt-1 flex flex-wrap items-end gap-2">
+                    <span className="text-2xl font-black text-white">
+                      {service.price}
+                    </span>
+                    <span className="pb-1 text-xs font-semibold uppercase text-white/45">
+                      {service.priceNote}
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -92,10 +120,10 @@ export default function Services() {
           </div>
 
           <Link
-            to="/pricing"
-            className="mt-5 inline-block shrink-0 rounded-xl border border-white/10 bg-white/[0.04] px-6 py-3 text-sm font-black text-white/85 hover:border-red-600 hover:bg-white/[0.07] md:mt-0"
+            to="/contact"
+            className="mt-5 inline-block shrink-0 rounded-xl bg-axi-red px-6 py-3 text-sm font-black text-white shadow-[0_10px_30px_rgba(225,6,0,0.22)] hover:shadow-[0_18px_50px_rgba(225,6,0,0.3)] md:mt-0"
           >
-            Compare Pricing
+            Get My Breakdown
           </Link>
         </div>
       </section>
