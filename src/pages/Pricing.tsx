@@ -12,7 +12,7 @@ export default function Pricing() {
         subtitle="Start with Find What’s Wrong, then build only what the business actually needs."
       />
 
-      <section className="mx-auto grid max-w-7xl gap-6 px-6 py-8 md:grid-cols-3">
+      <section className="mx-auto grid max-w-7xl gap-6 px-6 pb-16 pt-4 md:grid-cols-3">
         {offers.map((offer, index) => (
           <OfferCard key={offer.slug} offer={offer} featured={index === 0} />
         ))}
