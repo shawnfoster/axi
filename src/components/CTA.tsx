@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function CTA() {
   return (
-    <section className="relative overflow-hidden border-t border-axi-border/70">
+    <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(225,6,0,0.12),transparent_42%)]" />
 
       <div className="relative mx-auto max-w-7xl px-6 py-12 md:py-14">
